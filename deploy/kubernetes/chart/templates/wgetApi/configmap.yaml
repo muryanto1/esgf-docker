@@ -34,5 +34,8 @@ data:
     {
       "allowed_projects": [{{ $wgetApi.settings.allowed_projects | join "," }}]
     }
-
+  esgf_solr_shards.xml: |
+    {{ range $wgetApi.settings.shards }}
+       shard: {{ . }}
+    {{ end }}
 {{- end -}}

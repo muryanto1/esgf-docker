@@ -358,5 +358,9 @@ index:
         - '"input4MIPs"'
         - '"CREATE-IP"'
         - '"E3SM"'
+      shards:
+        - '"localhost:8983/solr"'
+        - '"localhost:8984/solr"'
+        - '"localhost:8985/solr"'
     # The number of replicas for the wgetApi pod.
     replicaCount: 1
