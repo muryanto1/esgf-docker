@@ -325,7 +325,7 @@ index:
     image:
       prefix: muryanto1
       repository: esgf-wget
-      tag: "1.8"
+      tag: "1.9"
     # The pod security context for all wgetApi pods
     # This should normally not need to change unless Solr pods are configured to use
     # specific paths on the host for core storage
@@ -340,6 +340,7 @@ index:
       readOnlyRootFilesystem: true
     config_path: /esg/esgf_wget
     config: wget_api_config
+    allowed_projects_json: esgf_allowed_projects.json
     settings:
       debug: False
       allowedHosts: "*"
@@ -349,5 +350,17 @@ index:
       wgetScriptFileMaxLimit: 50000
       dataUploadMaxNumberFields: 10240
       wgetMaxDirLength: 50
+      # Allowed projects for wget api
+      allowed_projects:
+        - '"CMIP6"'
+        - '"CMIP5"'
+        - '"CMIP3"'
+        - '"input4MIPs"'
+        - '"CREATE-IP"'
+        - '"E3SM"'
+      shards:
+        - '"localhost:8983/solr"'
+        - '"localhost:8984/solr"'
+        - '"localhost:8985/solr"'
     # The number of replicas for the wgetApi pod.
     replicaCount: 1
