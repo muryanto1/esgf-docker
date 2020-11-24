@@ -7,7 +7,7 @@
 - hosts: all
   become: true
   roles:
-    - docker
+#    - docker
     - { name: data, tags: [data] }
     - { name: index, tags: [index] }
     - proxy
