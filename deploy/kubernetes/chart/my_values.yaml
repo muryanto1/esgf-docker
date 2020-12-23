@@ -345,8 +345,8 @@ index:
       debug: False
       allowedHosts: "*"
       esgfSolrUrl: https://esgf-node.llnl.gov/solr
-      esgfSolrShardsXml: /esg/config/esgf_shards_static.xml
-      wgetScriptFileDefaultLimit: 500
+      esgfSolrShardsXml: /esg/esgf_wget/esgf_solr_shards.xml
+      wgetScriptFileDefaultLimit: 10000
       wgetScriptFileMaxLimit: 50000
       dataUploadMaxNumberFields: 10240
       wgetMaxDirLength: 50
@@ -359,8 +359,15 @@ index:
         - '"CREATE-IP"'
         - '"E3SM"'
       shards:
-        - '"localhost:8983/solr"'
-        - '"localhost:8984/solr"'
-        - '"localhost:8985/solr"'
+        - localhost:8983/solr
+        - localhost:8985/solr
+        - localhost:8987/solr
+        - localhost:8988/solr
+        - localhost:8990/solr
+        - localhost:8993/solr
+        - localhost:8994/solr
+        - localhost:8995/solr
+        - localhost:8996/solr
+        - localhost:8997/solr
     # The number of replicas for the wgetApi pod.
     replicaCount: 1

@@ -13,6 +13,11 @@
   template:
     src: "esgf_wgetapi_config.j2"
     dest: "/tmp/esgf_wget/{{ wget_api.config }}"
+    
+- name: Write wget api allowed projects
+  template:
+    src: "esgf_wgetapi_allowed_projects.json.j2"
+    dest: "/tmp/esgf_wget/{{ wget_api.allowed_projects_json }}"
 
 - name: Start wget_api container
   docker_container:
