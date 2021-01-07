@@ -19,6 +19,11 @@
     src: "esgf_wgetapi_allowed_projects.json.j2"
     dest: "/tmp/esgf_wget/{{ wget_api.allowed_projects_json }}"
 
+- name: Write XML file containing Solr shards
+  template:
+    src: "esgf_shards_static.xml.j2"
+    dest: "/tmp/esgf_wget/esgf_shards_static.xml"
+
 - name: Start wget_api container
   docker_container:
     name: wget_api
