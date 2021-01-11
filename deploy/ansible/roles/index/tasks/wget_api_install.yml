@@ -21,7 +21,7 @@
 
 - name: Write XML file containing Solr shards
   template:
-    src: "esgf_wgetapi_solr_shards_static.xml.j2"
+    src: "esgf_wgetapi_solr_shards_static.xml"
     dest: "/tmp/esgf_wget/esgf_wgetapi_solr_shards_static.xml"
 
 - name: Start wget_api container
